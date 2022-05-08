@@ -1,5 +1,10 @@
 # go工程实践
 
+在V0的基础上修改如下：
+支持发布帖子
+本地ID生成需要保证不重复、唯一性
+Append 文件，更新索引，注意 Map 的并发安全问题
+
 VERSIOVN MV0.1
 git branch xxx      # 创建分支
 git checkout        # 切换分支

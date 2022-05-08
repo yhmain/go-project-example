@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/Moonlight-Zhao/go-project-example/cotroller"
 	"github.com/Moonlight-Zhao/go-project-example/repository"
 	"gopkg.in/gin-gonic/gin.v1"
-	"os"
 )
 
 func main() {
@@ -16,6 +18,15 @@ func main() {
 		topicId := c.Param("id")
 		data := cotroller.QueryPageInfo(topicId)
 		c.JSON(200, data)
+	})
+	// 新增发帖功能
+	// 需要传入2个参数：该帖对应的主题ID，和该帖的内容
+	r.POST("/community/post/submit", func(ctx *gin.Context) {
+		topicId := ctx.PostForm("topicId")
+		postContent := ctx.PostForm("content")
+		// data := cotroller.PublishPost(topicId, content)
+		// ctx.JSON(200, data)
+		fmt.Printf("ID: %v, Content: %v", topicId, postContent)
 	})
 	err := r.Run()
 	if err != nil {
