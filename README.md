@@ -1,5 +1,7 @@
 # go工程实践
 
+克隆V0版本：git clone -b V0 https://github.com/yhmain/go-project-example
+
 ## concurrence包
 * 并发编程
 
