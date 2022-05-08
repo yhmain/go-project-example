@@ -1,6 +1,11 @@
 # go工程实践
 
 克隆V0版本：git clone -b V0 https://github.com/yhmain/go-project-example
+提交一套流程的命令：参考网址：https://www.cnblogs.com/lxpblogs/p/15504450.html
+进入当前项目目录下依次执行命令：
+git add *
+git commit -m "你自己的一些说明"
+git push origin 分支名
 
 ## concurrence包
 * 并发编程
