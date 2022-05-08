@@ -1,4 +1,4 @@
-module github.com/Moonlight-Zhao/go-project-example
+module github.com/yhmain/go-project-example
 
 go 1.16
 
