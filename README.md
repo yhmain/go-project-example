@@ -1,5 +1,10 @@
 # go工程实践
 
+VERSIOVN MV0.1
+git branch xxx      # 创建分支
+git checkout        # 切换分支
+git branch          # 查询当前分支
+
 克隆V0版本：git clone -b V0 https://github.com/yhmain/go-project-example
 提交一套流程的命令：参考网址：https://www.cnblogs.com/lxpblogs/p/15504450.html
 进入当前项目目录下依次执行命令：
