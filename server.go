@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/yhmain/go-project-example/controller"
@@ -23,12 +22,13 @@ func main() {
 	})
 	// 新增发帖功能
 	// 需要传入2个参数：该帖对应的主题ID，和该帖的内容
+	// 测试链接：localhost:8080/community/post/submit + postman测试插件
 	r.POST("/community/post/submit", func(ctx *gin.Context) {
 		topicId := ctx.PostForm("topicId")
 		postContent := ctx.PostForm("content")
-		// data := cotroller.PublishPost(topicId, content)
-		// ctx.JSON(200, data)
-		fmt.Printf("Topic ID: %v, Post Content: %v", topicId, postContent)
+		data := controller.PublishPost(topicId, postContent)
+		ctx.JSON(200, data)
+		// fmt.Printf("Topic ID: %v, Post Content: %v", topicId, postContent)
 	})
 	err := r.Run()
 	if err != nil {
