@@ -47,7 +47,7 @@ func (*PostDao) InsertNewPost(post *Post) error {
 	postStr, _ := json.Marshal(post) //序列号为json格式
 	//写入文件时需要string
 	//注意windows中回车换行符
-	if _, err = open.WriteString(string(postStr) + "\r\n"); err != nil {
+	if _, err = open.WriteString("\n" + string(postStr)); err != nil {
 		return err
 	}
 	//更新Map时考虑并发安全性问题
