@@ -19,6 +19,7 @@ var (
 	postOnce sync.Once //单例模式，可以在代码的任意位置初始化和调用，因此可以延迟到使用时再执行，并发场景下是线程安全的
 )
 
+//初始化单例
 func NewPostDaoInstance() *PostDao {
 	postOnce.Do(
 		func() {

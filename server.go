@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/yhmain/go-project-example/cotroller"
+	cotroller "github.com/yhmain/go-project-example/controller"
 	"github.com/yhmain/go-project-example/repository"
 	"gopkg.in/gin-gonic/gin.v1"
 )
@@ -14,6 +14,7 @@ func main() {
 		os.Exit(-1)
 	}
 	r := gin.Default()
+
 	//测试链接：localhost:8080/community/page/get/2
 	r.GET("/community/page/get/:id", func(c *gin.Context) {
 		topicId := c.Param("id")
