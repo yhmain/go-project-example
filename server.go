@@ -36,6 +36,7 @@ func main() {
 	}
 }
 
+//初始化数据库
 func Init(filePath string) error {
 	if err := repository.Init(filePath); err != nil {
 		return err

@@ -2,7 +2,6 @@ package service
 
 import (
 	"errors"
-	"fmt"
 	"time"
 	"unicode/utf16"
 
@@ -40,15 +39,12 @@ type PublishNewPost struct {
 
 func (f *PublishNewPost) Do() (int64, error) {
 	//;写法为在if语句之前添加一个执行语句  ;后面的才为if的判断条件
-	fmt.Println("111")
 	if err := f.checkParam(); err != nil {
 		return 0, err
 	}
-	fmt.Println("222")
 	if err := f.publish(); err != nil {
 		return 0, err
 	}
-	fmt.Println("333")
 	return f.postId, nil
 }
 
