@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	cotroller "github.com/yhmain/go-project-example/controller"
+	"github.com/yhmain/go-project-example/controller"
 	"github.com/yhmain/go-project-example/repository"
 	"gopkg.in/gin-gonic/gin.v1"
 )
@@ -18,7 +18,7 @@ func main() {
 	//测试链接：localhost:8080/community/page/get/2
 	r.GET("/community/page/get/:id", func(c *gin.Context) {
 		topicId := c.Param("id")
-		data := cotroller.QueryPageInfo(topicId)
+		data := controller.QueryPageInfo(topicId)
 		c.JSON(200, data)
 	})
 	// 新增发帖功能
@@ -28,7 +28,7 @@ func main() {
 		postContent := ctx.PostForm("content")
 		// data := cotroller.PublishPost(topicId, content)
 		// ctx.JSON(200, data)
-		fmt.Printf("ID: %v, Content: %v", topicId, postContent)
+		fmt.Printf("Topic ID: %v, Post Content: %v", topicId, postContent)
 	})
 	err := r.Run()
 	if err != nil {
