@@ -39,6 +39,7 @@ func (*PostDao) QueryPostsByParentId(parentId int64) []*Post {
 
 //向文件/数据库中插入新发布的帖子
 func (*PostDao) InsertNewPost(post *Post) error {
+	//0600 0rw-------
 	open, err := os.OpenFile("./data/post", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
 	if err != nil {
 		return err
@@ -47,7 +48,7 @@ func (*PostDao) InsertNewPost(post *Post) error {
 	postStr, _ := json.Marshal(post) //序列号为json格式
 	//写入文件时需要string
 	//注意windows中回车换行符
-	if _, err = open.WriteString("\n" + string(postStr)); err != nil {
+	if _, err = open.WriteString(string(postStr) + "\n"); err != nil {
 		return err
 	}
 	//更新Map时考虑并发安全性问题
