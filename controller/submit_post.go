@@ -6,7 +6,7 @@ import (
 	"github.com/yhmain/go-project-example/service"
 )
 
-//存入心帖子
+//存入新帖子
 func PublishPost(topicIdStr, content string) *PageData {
 	//参数转换
 	topicId, _ := strconv.ParseInt(topicIdStr, 10, 64)

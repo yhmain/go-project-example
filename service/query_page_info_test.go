@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
@@ -15,5 +16,10 @@ func TestMain(m *testing.M) {
 func TestQueryPageInfo(t *testing.T) {
 	pageInfo, _ := QueryPageInfo(1)
 	assert.NotEqual(t, nil, pageInfo)
+	// fmt.Printf("%#v", pageInfo.PostList)
+	// fmt.Printf("%#v", pageInfo)
+	for _, e := range pageInfo.PostList {
+		fmt.Printf("%#v", e)
+	}
 	assert.Equal(t, 5, len(pageInfo.PostList))
 }
