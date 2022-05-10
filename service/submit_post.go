@@ -14,7 +14,7 @@ var idGen *idworker.IdWorker
 //ID生成器的初始化
 func init() {
 	idGen = &idworker.IdWorker{}
-	idGen.InitIdWorker(1, 1)
+	idGen.InitIdWorker(1, 1) //WORKERID位数 (用于对工作进程进行编码), 数据中心ID位数 (用于对数据中心进行编码)
 }
 
 //供controller调用，写入新帖子
